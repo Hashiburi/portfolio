@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnlineWASD | Portfolio</title>
+    <style>
+        /* --- Design Tokens & Reset --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        :root {
+            --bg-color: #0f0f13;
+            --card-bg: #1a1a24;
+            --accent-color: #ff4757; /* Custom accent color */
+            --text-main: #f5f5f7;
+            --text-muted: #a0a0b0;
+            --yt-red: #ff0000;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Header / Hero Section --- */
+        header {
+            text-align: center;
+            padding: 80px 0 40px 0;
+            background: linear-gradient(180deg, rgba(26,26,36,0.5) 0%, rgba(15,15,19,1) 100%);
+        }
+
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #252538;
+            margin: 0 auto 20px auto;
+            border: 3px solid var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            box-shadow: 0 0 20px rgba(255, 71, 87, 0.2);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 24px auto;
+        }
+
+        /* --- Social Links Buttons --- */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+        }
+
+        .btn-youtube {
+            background-color: var(--yt-red);
+            color: #fff;
+        }
+
+        .btn-youtube:hover {
+            background-color: #cc0000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: var(--card-bg);
+            border: 1px solid #2d2d3d;
+            color: var(--text-main);
+        }
+
+        .btn-secondary:hover {
+            background-color: #252533;
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        /* --- Main Content Sections --- */
+        section {
+            margin-top: 60px;
+        }
+
+        section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* --- Video Grid --- */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .video-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #222230;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            border-color: #3b3b54;
+        }
+
+        /* Responsive 16:9 Aspect Ratio for Embeds */
+        .video-thumbnail {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: #000;
+        }
+
+        .video-thumbnail iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-info {
+            padding: 20px;
+        }
+
+        .video-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .video-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* --- About / Spec Section --- */
+        .about-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 30px;
+            border: 1px solid #222230;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid #1a1a24;
+            padding-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="profile-avatar">WASD</div>
+            <h1>OnlineWASD</h1>
+            <p>Gaming content creator specializing in tactical survival, optimization, and high-intensity gameplay.</p>
+            
+            <div class="social-links">
+                <!-- Direct link to your channel with automatic subscribe pop-up trigger -->
+                <a href="https://youtube.com/@OnlineWASD?sub_confirmation=1" target="_blank" class="btn btn-youtube">
+                    Subscribe on YouTube
+                </a>
+                <a href="#" class="btn btn-secondary">Discord</a>
+                <a href="#" class="btn btn-secondary">Twitter / X</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- Featured Videos Section -->
+        <section id="videos">
+            <h2>Latest Uploads</h2>
+            <div class="video-grid">
+                
+                <!-- Video Card 1 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <!-- Replace https://youtu.be/WnMSW6bTxhA with your first video's ID code -->
+                        <iframe src="https://www.youtube.com/embed/https://youtu.be/WnMSW6bTxhA" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>How to turn Minecraft into Trailers!</h3>
+                        <p>I will give you all Reesourcepacks and Mods</p>
+                    </div>
+                </div>
+
+                <!-- Video Card 2 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <!-- Replace YOUR_https://youtu.be/j1ZvLUrxtK8 with your second video's ID code -->
+                        <iframe src="https://www.youtube.com/embed/https://youtu.be/j1ZvLUrxtK8" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>PvP with @spiderunique</h3>
+                        <p>Who will win Me or Spiderunique?</p>
+                    </div>
+                </div>
+
+                <!-- Video Card 3 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <!-- Replace https://youtu.be/wV_-SUL0AfY with your third video's ID code -->
+                        <iframe src="https://www.youtube.com/embed/https://youtu.be/wV_-SUL0AfY" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Stickman vs. Minecraft Mobs!</h3>
+                        <p>Can Minecraft mobs army Defeat a Stickman with a single Katana/Sword?</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- About / Setup Section -->
+        <section id="about">
+            <h2>About The Channel</h2>
+            <div class="about-card">
+                <p>Welcome to the official hub. This channel is dedicated to pushing games to their absolute limits, breaking down technical mechanics, and delivering raw survival action. New videos drop weekly—don't forget to subscribe and turn on notifications so you never miss an episode!</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 OnlineWASD. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
