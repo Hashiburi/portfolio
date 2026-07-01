@@ -147,12 +147,19 @@
             gap: 25px;
         }
 
+        .video-card-link {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+        }
+
         .video-card {
             background-color: var(--card-bg);
             border-radius: 8px;
             overflow: hidden;
             border: 1px solid #222230;
             transition: transform 0.2s ease, border-color 0.2s ease;
+            height: 100%;
         }
 
         .video-card:hover {
@@ -175,6 +182,7 @@
             width: 100%;
             height: 100%;
             border: 0;
+            z-index: 2; /* Allows clicking the player directly */
         }
 
         .video-info {
@@ -243,40 +251,46 @@
             <div class="video-grid">
                 
                 <!-- Video Card 1 -->
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <!-- Replace https://youtu.be/WnMSW6bTxhA with your first video's ID code -->
-                        <iframe src="https://www.youtube.com/embed/https://youtu.be/WnMSW6bTxhA" allowfullscreen></iframe>
+                <a href="https://youtu.be/WnMSW6bTxhA" target="_blank" class="video-card-link">
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <!-- Cleaned up embed ID: WnMSW6bTxhA -->
+                            <iframe src="https://www.youtube.com/embed/WnMSW6bTxhA" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3>How to turn Minecraft into Trailers!</h3>
+                            <p>I will give you all Resourcepacks and Mods</p>
+                        </div>
                     </div>
-                    <div class="video-info">
-                        <h3>How to turn Minecraft into Trailers!</h3>
-                        <p>I will give you all Reesourcepacks and Mods</p>
-                    </div>
-                </div>
+                </a>
 
                 <!-- Video Card 2 -->
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <!-- Replace YOUR_https://youtu.be/j1ZvLUrxtK8 with your second video's ID code -->
-                        <iframe src="https://www.youtube.com/embed/https://youtu.be/j1ZvLUrxtK8" allowfullscreen></iframe>
+                <a href="https://youtu.be/j1ZvLUrxtK8" target="_blank" class="video-card-link">
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <!-- Cleaned up embed ID: j1ZvLUrxtK8 -->
+                            <iframe src="https://www.youtube.com/embed/j1ZvLUrxtK8" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3>PvP with @spiderunique</h3>
+                            <p>Who will win Me or Spiderunique?</p>
+                        </div>
                     </div>
-                    <div class="video-info">
-                        <h3>PvP with @spiderunique</h3>
-                        <p>Who will win Me or Spiderunique?</p>
-                    </div>
-                </div>
+                </a>
 
                 <!-- Video Card 3 -->
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <!-- Replace https://youtu.be/wV_-SUL0AfY with your third video's ID code -->
-                        <iframe src="https://www.youtube.com/embed/https://youtu.be/wV_-SUL0AfY" allowfullscreen></iframe>
+                <a href="https://youtu.be/wV_-SUL0AfY" target="_blank" class="video-card-link">
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <!-- Cleaned up embed ID: wV_-SUL0AfY -->
+                            <iframe src="https://www.youtube.com/embed/wV_-SUL0AfY" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3>Stickman vs. Minecraft Mobs!</h3>
+                            <p>Can Minecraft mobs army Defeat a Stickman with a single Katana/Sword?</p>
+                        </div>
                     </div>
-                    <div class="video-info">
-                        <h3>Stickman vs. Minecraft Mobs!</h3>
-                        <p>Can Minecraft mobs army Defeat a Stickman with a single Katana/Sword?</p>
-                    </div>
-                </div>
+                </a>
 
             </div>
         </section>
