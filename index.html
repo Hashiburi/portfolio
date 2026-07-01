@@ -147,12 +147,6 @@
             gap: 25px;
         }
 
-        .video-card-link {
-            display: block;
-            color: inherit;
-            text-decoration: none;
-        }
-
         .video-card {
             background-color: var(--card-bg);
             border-radius: 8px;
@@ -160,6 +154,8 @@
             border: 1px solid #222230;
             transition: transform 0.2s ease, border-color 0.2s ease;
             height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         .video-card:hover {
@@ -182,7 +178,13 @@
             width: 100%;
             height: 100%;
             border: 0;
-            z-index: 2; /* Allows clicking the player directly */
+        }
+
+        .video-info-link {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+            flex-grow: 1;
         }
 
         .video-info {
@@ -197,6 +199,12 @@
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
+            transition: color 0.2s ease;
+        }
+
+        /* Light up title when hovering over the info area */
+        .video-info-link:hover h3 {
+            color: var(--accent-color);
         }
 
         .video-info p {
@@ -251,46 +259,43 @@
             <div class="video-grid">
                 
                 <!-- Video Card 1 -->
-                <a href="https://youtu.be/WnMSW6bTxhA" target="_blank" class="video-card-link">
-                    <div class="video-card">
-                        <div class="video-thumbnail">
-                            <!-- Cleaned up embed ID: WnMSW6bTxhA -->
-                            <iframe src="https://www.youtube.com/embed/WnMSW6bTxhA" allowfullscreen></iframe>
-                        </div>
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/WnMSW6bTxhA" allowfullscreen></iframe>
+                    </div>
+                    <a href="https://youtu.be/WnMSW6bTxhA" target="_blank" class="video-info-link">
                         <div class="video-info">
                             <h3>How to turn Minecraft into Trailers!</h3>
                             <p>I will give you all Resourcepacks and Mods</p>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
 
                 <!-- Video Card 2 -->
-                <a href="https://youtu.be/j1ZvLUrxtK8" target="_blank" class="video-card-link">
-                    <div class="video-card">
-                        <div class="video-thumbnail">
-                            <!-- Cleaned up embed ID: j1ZvLUrxtK8 -->
-                            <iframe src="https://www.youtube.com/embed/j1ZvLUrxtK8" allowfullscreen></iframe>
-                        </div>
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/j1ZvLUrxtK8" allowfullscreen></iframe>
+                    </div>
+                    <a href="https://youtu.be/j1ZvLUrxtK8" target="_blank" class="video-info-link">
                         <div class="video-info">
                             <h3>PvP with @spiderunique</h3>
                             <p>Who will win Me or Spiderunique?</p>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
 
                 <!-- Video Card 3 -->
-                <a href="https://youtu.be/wV_-SUL0AfY" target="_blank" class="video-card-link">
-                    <div class="video-card">
-                        <div class="video-thumbnail">
-                            <!-- Cleaned up embed ID: wV_-SUL0AfY -->
-                            <iframe src="https://www.youtube.com/embed/wV_-SUL0AfY" allowfullscreen></iframe>
-                        </div>
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/wV_-SUL0AfY" allowfullscreen></iframe>
+                    </div>
+                    <a href="https://youtu.be/wV_-SUL0AfY" target="_blank" class="video-info-link">
                         <div class="video-info">
                             <h3>Stickman vs. Minecraft Mobs!</h3>
                             <p>Can Minecraft mobs army Defeat a Stickman with a single Katana/Sword?</p>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
 
             </div>
         </section>
